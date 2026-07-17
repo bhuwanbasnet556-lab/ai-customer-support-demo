@@ -1,5 +1,5 @@
 const chatBox = document.getElementById("chatBox");
-let products = [];
+let products = []
 
 fetch("products.json")
   .then(res => res.json())

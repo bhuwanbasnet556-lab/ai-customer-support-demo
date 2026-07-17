@@ -1,36 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>AI Customer Support</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Business Assistant</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>🤖 AI Customer Support</h2>
+<div class="container">
 
-<input id="q" placeholder="Ask anything...">
-<button onclick="reply()">Send</button>
+  <div class="header">
+    <div>
+      <h2>🤖 Smart Business Assistant</h2>
+      <p>24/7 Customer Support</p>
+    </div>
 
-<p id="ans"></p>
+    <div class="status">
+      ● Online
+    </div>
+  </div>
 
-<script>
-function reply() {
-let q = document.getElementById("q").value.toLowerCase();
+  <div id="chatBox" class="chat-box">
 
-if(q.includes("price")){
-document.getElementById("ans").innerHTML="Price: NPR 1,999";
-}
-else if(q.includes("delivery")){
-document.getElementById("ans").innerHTML="Delivery available all over Nepal.";
-}
-else if(q.includes("location")){
-document.getElementById("ans").innerHTML="Kathmandu, Nepal.";
-}
-else{
-document.getElementById("ans").innerHTML="Thanks! Our team will contact you.";
-}
-}
-</script>
+    <div class="bot">
+      👋 Namaste! Welcome.<br><br>
+
+      Ask me anything about:
+      <br>📦 Products
+      <br>🚚 Delivery
+      <br>📍 Location
+      <br>💰 Price
+      <br>📞 Contact
+    </div>
+
+  </div>
+
+  <div class="quick">
+
+<button onclick="quick('Price')">💰 Price</button>
+
+<button onclick="quick('Delivery')">🚚 Delivery</button>
+
+<button onclick="quick('Location')">📍 Location</button>
+
+<button onclick="quick('Contact')">📞 Contact</button>
+
+  </div>
+
+  <div class="input-area">
+
+<input
+id="message"
+placeholder="Type your message...">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,1 +1,27 @@
-
+[
+  {
+    "name": "iPhone 16",
+    "price": "NPR 134999",
+    "stock": "In Stock"
+  },
+  {
+    "name": "Samsung Galaxy S25",
+    "price": "NPR 124999",
+    "stock": "In Stock"
+  },
+  {
+    "name": "Redmi Note 14 Pro",
+    "price": "NPR 39999",
+    "stock": "Limited Stock"
+  },
+  {
+    "name": "AirPods Pro",
+    "price": "NPR 32999",
+    "stock": "In Stock"
+  },
+  {
+    "name": "20W Fast Charger",
+    "price": "NPR 1999",
+    "stock": "In Stock"
+  }
+]

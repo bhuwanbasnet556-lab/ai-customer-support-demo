@@ -1,4 +1,11 @@
 const chatBox = document.getElementById("chatBox");
+let products = [];
+
+fetch("products.json")
+  .then(res => res.json())
+  .then(data => {
+    products = data;
+  });
 
 function addMessage(text, sender) {
   const div = document.createElement("div");
@@ -7,32 +14,39 @@ function addMessage(text, sender) {
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
-
 function getReply(message) {
   message = message.toLowerCase();
 
+  // Product Search
+  for (let product of products) {
+    if (message.includes(product.name.toLowerCase())) {
+      return `
+📱 <b>${product.name}</b><br>
+💰 ${product.price}<br>
+📦 ${product.stock}
+      `;
+    }
+  }
+
   if (message.includes("price")) {
-    return "💰 Please tell me the product name to check the price.";
+    return "💰 Please type the product name (Example: iPhone 16)";
   }
 
   if (message.includes("delivery")) {
-    return "🚚 We deliver all over Nepal. Delivery usually takes 1–3 days.";
+    return "🚚 Delivery available all over Nepal (1–3 days).";
   }
 
   if (message.includes("location")) {
-    return "📍 Our store is located in Kathmandu.";
+    return "📍 Kathmandu, Nepal";
   }
 
   if (message.includes("contact")) {
-    return "📞 Contact: +977-98XXXXXXXX";
+    return "📞 +977-98XXXXXXXX";
   }
 
   if (message.includes("hello") || message.includes("hi")) {
-    return "👋 Namaste! How can I help you today?";
+    return "👋 Namaste! Welcome to our store.";
   }
-
-  return "🤖 Sorry, I couldn't understand that. Please ask about price, delivery, location or contact.";
-}
 
 function sendMessage() {
   const input = document.getElementById("message");
